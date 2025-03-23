@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../firebase/firebase"; // Updated path
+import { auth, googleProvider } from "../firebase/firebase";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -33,19 +33,19 @@ function Login() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-        Login
+    <div className="mx-auto mt-8 max-w-md">
+      <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+        Sign in
       </h1>
-      {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+      {error && <p className="mb-4 text-center text-red-500">{error}</p>}
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded-lg p-6"
+        className="rounded-lg bg-white p-6 shadow-md"
       >
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-gray-700 font-medium mb-2"
+            className="mb-2 block font-medium text-gray-700"
           >
             Email
           </label>
@@ -54,7 +54,7 @@ function Login() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="Enter your email"
             required
           />
@@ -62,7 +62,7 @@ function Login() {
         <div className="mb-6">
           <label
             htmlFor="password"
-            className="block text-gray-700 font-medium mb-2"
+            className="mb-2 block font-medium text-gray-700"
           >
             Password
           </label>
@@ -71,25 +71,25 @@ function Login() {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="Enter your password"
             required
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors mb-4"
+          className="mb-4 w-full rounded-md bg-blue-600 py-2 text-white transition-colors hover:bg-blue-700"
         >
-          Login
+          Sign in
         </button>
 
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="w-full bg-white text-gray-700 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 mb-4"
+          className="mb-4 flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white py-2 text-gray-700 transition-colors hover:bg-gray-100"
         >
           <svg
-            className="w-5 h-5"
+            className="h-5 w-5"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -116,7 +116,7 @@ function Login() {
         <div className="flex justify-between text-sm text-gray-600">
           <Link
             to="/user/reset-password"
-            className="hover:text-blue-600 transition-colors"
+            className="transition-colors hover:text-blue-600"
           >
             Forgot password?
           </Link>
@@ -124,7 +124,7 @@ function Login() {
             No account?{" "}
             <Link
               to="/user/signup"
-              className="text-blue-600 hover:underline transition-colors"
+              className="text-blue-600 transition-colors hover:underline"
             >
               Create here
             </Link>

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext"; // Added
+import { AuthProvider } from "./context/AuthContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import UserPage from "./pages/UserPage";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
             <Route path="user/login" element={<Login />} />
             <Route path="user/signup" element={<Signup />} />
             <Route path="user/reset-password" element={<ForgotPassword />} />
-            <Route path="user/details" element={<UserPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="user/details" element={<UserPage />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </AuthProvider>
