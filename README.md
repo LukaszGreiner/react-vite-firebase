@@ -11,7 +11,7 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-## Create .env file with firebaseConfig details
+## Create .env file with firebaseConfig
 
 VITE_FIREBASE_API_KEY = "";
 VITE_FIREBASE_AUTH_DOMAIN = "";
@@ -20,3 +20,5 @@ VITE_FIREBASE_STORAGE_BUCKET = "";
 VITE_FIREBASE_MESSAGING_SENDER_ID = "";
 VITE_FIREBASE_APP_ID = "";
 VITE_FIREBASE_MEASUREMENT_ID = "";
+
+## Customize theme in index.css

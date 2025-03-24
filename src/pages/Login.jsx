@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../firebase/firebase";
+import { auth, googleProvider } from "../firebase";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -78,7 +78,7 @@ function Login() {
         </div>
         <button
           type="submit"
-          className="mb-4 w-full rounded-md bg-blue-600 py-2 text-white transition-colors hover:bg-blue-700"
+          className="bg-primary hover:primary/90 mb-4 w-full cursor-pointer rounded-md py-2 text-white transition-colors"
         >
           Sign in
         </button>
@@ -86,7 +86,7 @@ function Login() {
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="mb-4 flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white py-2 text-gray-700 transition-colors hover:bg-gray-100"
+          className="mb-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-300 bg-white py-2 text-gray-700 transition-colors hover:bg-gray-100"
         >
           <svg
             className="h-5 w-5"

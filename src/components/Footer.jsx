@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="mt-auto bg-gray-800 p-4 text-white">
+    <footer className="bg-primary mt-auto p-4 text-white">
       <div className="container mx-auto text-center">
         <p>&copy; 2025 My App. All rights reserved.</p>
       </div>

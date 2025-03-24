@@ -15,38 +15,38 @@ function UserPage() {
   };
 
   if (!currentUser) {
-    return <p className="text-center mt-8">Loading...</p>;
+    return <p className="mt-8 text-center">Loading...</p>;
   }
 
   // Use Google profile picture with no-referrer, or local placeholder
   const profileImage = currentUser.photoURL || "/profile_icon.jpg";
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+    <div className="mx-auto mt-8 max-w-md">
+      <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
         User Details
       </h1>
-      <div className="bg-white shadow-md rounded-lg p-6">
-        <div className="flex justify-center mb-6">
+      <div className="rounded-lg bg-white p-6 shadow-md">
+        <div className="mb-6 flex justify-center">
           <img
             src={profileImage}
             alt="Profile"
-            className="w-24 h-24 rounded-full object-cover"
+            className="h-24 w-24 rounded-full object-cover"
             referrerPolicy={currentUser.photoURL ? "no-referrer" : undefined} // Add no-referrer only for Google image
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Name</label>
+          <label className="mb-2 block font-medium text-gray-700">Name</label>
           <p className="text-gray-900">
             {currentUser.displayName || "Not provided"}
           </p>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Email</label>
+          <label className="mb-2 block font-medium text-gray-700">Email</label>
           <p className="text-gray-900">{currentUser.email}</p>
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 font-medium mb-2">Joined</label>
+          <label className="mb-2 block font-medium text-gray-700">Joined</label>
           <p className="text-gray-900">
             {currentUser.metadata.creationTime
               ? new Date(currentUser.metadata.creationTime).toLocaleDateString()
@@ -55,7 +55,7 @@ function UserPage() {
         </div>
         <button
           onClick={handleLogout}
-          className="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition-colors"
+          className="bg-warning hover:bg-warning/90 w-full cursor-pointer rounded-md py-2 text-white transition-colors"
         >
           Logout
         </button>

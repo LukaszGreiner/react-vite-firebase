@@ -1,12 +1,11 @@
 export default function Hamburger({ isOpen, setIsOpen }) {
   return (
     <button
-      className="md:hidden text-white cursor-pointer "
+      className="cursor-pointer text-white md:hidden"
       onClick={() => setIsOpen(!isOpen)}
     >
-      {/* Simple hamburger icon */}
       <svg
-        className="w-6 h-6"
+        className="h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

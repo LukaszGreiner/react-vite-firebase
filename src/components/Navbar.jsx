@@ -69,7 +69,7 @@ function ProfileSection({ isAuthenticated, profileImage, username }) {
         </Link>
       ) : (
         <Link to="/user/login">
-          <button className="rounded-md bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700">
+          <button className="bg-secondary hover:bg-secondary/90 rounded-md px-4 py-2 text-white transition-colors">
             Sign In
           </button>
         </Link>
@@ -81,7 +81,7 @@ function ProfileSection({ isAuthenticated, profileImage, username }) {
 function MobileNav({ isOpen, setIsOpen, isAuthenticated }) {
   return (
     <nav
-      className={`absolute top-full left-0 z-10 w-full flex-col space-y-4 bg-gray-800 p-4 md:hidden ${
+      className={`bg-primary absolute top-full left-0 z-10 w-full flex-col space-y-4 p-4 md:hidden ${
         isOpen ? "flex" : "hidden"
       }`}
     >
