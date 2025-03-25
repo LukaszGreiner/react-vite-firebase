@@ -1,8 +1,8 @@
 function About() {
   return (
-    <div style={{ padding: "1rem" }}>
+    <div>
       <h1>About Us</h1>
-      <p>This is a simple demo showing React Router navigation.</p>
+      <p>Learn more about our values.</p>
     </div>
   );
 }

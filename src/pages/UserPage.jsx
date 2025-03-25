@@ -8,7 +8,7 @@ function UserPage() {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate("/user/login");
+      navigate("/");
     } catch (err) {
       console.error("Logout failed:", err);
     }
@@ -32,7 +32,7 @@ function UserPage() {
             src={profileImage}
             alt="Profile"
             className="h-24 w-24 rounded-full object-cover"
-            referrerPolicy={currentUser.photoURL ? "no-referrer" : undefined} // Add no-referrer only for Google image
+            referrerPolicy="no-referrer"
           />
         </div>
         <div className="mb-4">

@@ -8,7 +8,7 @@ const ProtectedRoute = () => {
     return <p className="mt-8 text-center">Loading...</p>;
   }
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/user/login" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;
